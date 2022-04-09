@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trad_fra-rum</title>
+</head>
+<body>
+    <script>
+        var fr=["bonjour","salut","aurevoir","bienvenue","bain","noix","eau"]
+        var ro=["bundi","allegra","a revair","bainvegni","bogn","nush","agua"]
+        function trada(){
+            let infr=document.getElementById("fra").value
+            for (let k=0;k<fr.length;k++){
+                if (infr==fr[k]) {
+                    let ret=ro[k]
+                    document.getElementById("rum").innerHTML=ret
+                } 
+            }
+        }
+        function tradr(){
+            let infr=document.getElementById("rumr").value
+            for (let k=0;k<ro.length;k++){
+                if (infr==ro[k]) {
+                    let ret=fr[k]
+                    document.getElementById("frar").innerHTML=ret
+                } 
+            }
+        }
+        function info(){
+            let tinf="Il est impossible de traduire une phrase ou un texte, les élements doivent être entrés mot par mot. Si la case de retour est vide, le mot entré est faux ou non enregistré dans le système."
+            document.getElementById("in").style.border="1px solid black"
+            document.getElementById("in").style.width="630px"
+            document.getElementById("in").style.height="40px"
+            document.getElementById("in").style.textAlign="center"
+            document.getElementById("in").innerHTML=tinf
+        }
+        function commie(){
+            alert("☭☭ привет украиблyат ☭☭")
+        }
+    </script>
+    <p>Français :</p>
+    <input id="fra" style="border: 1px solid black; width: 200px; height: 20px;">
+    <button onclick="trada()">Traduire (français → romache)</button>
+    <p>Rumantsch :</p>
+    <div id="rum" style="border: 1px solid black; width: 200px; height: 20px;"></div>
+    <p></p>
+    <br>
+    <p>Rumantsch :</p>
+    <input id="rumr" style="border: 1px solid black; width: 200px; height: 20px;">
+    <button onclick="tradr()">Traduire (romache → français)</button>
+    <p>Français :</p>
+    <div id="frar" style="border: 1px solid black; width: 200px; height: 20px;"></div>
+    <h1></h1>
+    <br>
+    <h1></h1>
+    <button onclick="info()">Informations sur l'utilisation du traducteur</button>
+    <p></p>
+    <div id="in"></div>
+</body>
+</html>
